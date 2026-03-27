@@ -18,12 +18,12 @@ jobs:
       - name: Install Haxelibs
         run: |
           haxelib setup ~/haxelib
-          haxelib install flixel
-          haxelib install lime
-          haxelib install openfl
-          haxelib install flixel-addons
-          haxelib install flixel-ui
-          haxelib git hscript https://github.com/HaxeFoundation/hscript
+          haxelib install flixel --quiet
+          haxelib install lime --quiet
+          haxelib install openfl --quiet
+          haxelib install flixel-addons --quiet
+          haxelib install flixel-ui --quiet
+          haxelib git hscript https://github.com/HaxeFoundation/hscript --quiet
 
       - name: Configure Lime
         run: |

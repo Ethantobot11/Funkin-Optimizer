@@ -278,7 +278,7 @@ class MainState extends FlxState {
 				coolweek = percent(weeksize, 85.267);
 			}
 			var cooljson = coolchart + coolchar + coolweek;
-			coolsize = (coolxml + coolimage + cooljson + audiosize + videosize + coollua + othersize) / 1048576;
+			coolsize = (coolxml + coolimage + cooljson + audiosize + videosize + coolhx + othersize) / 1048576;
 			coolsize = FlxMath.roundDecimal(coolsize, 2);
 		} else {
 			coolsize = (xmlsize + imagesize + spritesheetsize + chartsize + charsize + weeksize + audiosize + videosize + luasize + othersize) / 1048576;

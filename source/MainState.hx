@@ -18,7 +18,7 @@ class MainState extends FlxState {
 		//['JPEG Compression', 'jpegcomp', 'Slightly affects quality but decreases size'], // this shi take too long to code, gonna delay to other versions
 		['Spritesheet cropping', 'shinksprsh', 'Does not affect quality and improves performance (may increse file size)'],
 		['Minify Xmls', 'minxml', 'Shrinks xml files by making it 1 line (does not affect performance)'],
-		['Minify luas', 'minlua', 'Shrinks lua files by making it 1 line (does not affect performance)'],
+		['Minify hxs', 'minhx', 'Shrinks hx files by making it 1 line (does not affect performance)'],
 		['Minify Charts', 'minchart', 'Shrinks Charts by making it 1 line (does not affect performance)'],
 		['Minify Character Json', 'minchar', 'Shrinks Character json by making it 1 line (does not affect performance)'],
 		['Minify Week Jsons', 'minweek', 'Shrinks Week json files by making it 1 line (does not affect performance)']
@@ -206,16 +206,16 @@ class MainState extends FlxState {
 						xmlsize += stat.size;
 						stat = sys.FileSystem.stat(path.replace('.xml', '.png'));
 						spritesheetsize += stat.size;
-					} else if(path.endsWith('.lua')) {
+					} else if(path.endsWith('.hx')) {
 						luasize += stat.size;
 					} else if(path.endsWith('.json')) {
-						if(path.contains('data')) {
+						if(path.contains('data/charts')) {
 							chartsize += stat.size;
-						} else if(path.contains('characters')) {
+						} else if(path.contains('data/characters')) {
 							charsize += stat.size;
-						} else if(path.contains('stages')) {
+						} else if(path.contains('data/stages')) {
 							stagesize += stat.size;
-						} else if(path.contains('weeks')) {
+						} else if(path.contains('data/weeks')) {
 							weeksize += stat.size;
 						}
 					} else {
@@ -249,8 +249,8 @@ class MainState extends FlxState {
 	function getsize(optimized = false) {
 		var coolsize = 0.0;
 		if(optimized) {
-			var coollua = luasize;
-			if(Variables.minlua) {
+			var coolhx = hxsize;
+			if(Variables.minhx) {
 				coollua = percent(luasize, 86.359);
 			}
 			var coolxml = xmlsize;

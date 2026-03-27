@@ -251,7 +251,7 @@ class MainState extends FlxState {
 		if(optimized) {
 			var coolhx = hxsize;
 			if(Variables.minhx) {
-				coollua = percent(luasize, 86.359);
+				coolhx = percent(hxsize, 86.359);
 			}
 			var coolxml = xmlsize;
 			if(Variables.minxml) {

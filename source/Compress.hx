@@ -164,7 +164,7 @@ class Compress extends FlxState {
                         if(Variables.minxml) {
                             sys.io.File.saveContent(newpath, minify(sys.io.File.getContent(newpath)));
                         }
-                    } else if(path.endsWith('.lua')) {
+                    } else if(path.endsWith('.hx')) {
                         if(Variables.minlua) {
                             sys.io.File.saveContent(newpath, minify(sys.io.File.getContent(newpath)));
                         }
